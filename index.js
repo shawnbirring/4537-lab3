@@ -16,7 +16,7 @@ const server = http.createServer((req, res) => {
     res.end();
   } else {
     res.writeHead(200, { "Content-Type": "text/html" });
-    res.write(`<h1>Hello, there, provide a name!</h1>`);
+    res.write(`<p>Hello, there, provide a name!</p>`);
     res.end();
   }
 });
