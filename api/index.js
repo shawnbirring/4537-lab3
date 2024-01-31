@@ -1,6 +1,6 @@
 const http = require("http");
 
-http.createServer((req, res) => {
+module.exports = http.createServer((req, res) => {
   console.log(`Request made ${req}`);
   res.writeHead(200, { "Content-Type": "text/html" });
   res.write("<h1>Hello World</h1>");
