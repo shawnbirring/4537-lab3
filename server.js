@@ -1,9 +1,9 @@
 const http = require("http");
 const url = require("url");
 const querystring = require("querystring");
+const dm = require("./modules/utils");
 
 const server = http.createServer((req, res) => {
-  const date = new Date();
   const urlObj = url.parse(req.url);
   const queryObj = querystring.parse(urlObj.query);
   const name = queryObj.name;
@@ -11,7 +11,7 @@ const server = http.createServer((req, res) => {
   if (name) {
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(
-      `<p style="color: blue;">Hello ${name}, What a beautiful day. Server current date and time is * ${date.toString()}</p>`
+      `<p style="color: blue;">Hello ${name}, What a beautiful day. Server current date and time is * ${dm.getDate()}</p>`
     );
     res.end();
   } else {
