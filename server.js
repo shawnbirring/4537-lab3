@@ -11,9 +11,7 @@ const server = http.createServer((req, res) => {
 
   if (name) {
     const date = dm.getDate();
-    const message = messageTemplate
-      .replace("{name}", name)
-      .replace("{date}", date);
+    const message = msg.replace("{name}", name).replace("{date}", date);
     res.writeHead(200, { "Content-Type": "text/html" });
     res.write(`<p style="color: blue;">${message}</p>`);
     res.end();
